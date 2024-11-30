@@ -1,0 +1,68 @@
+"  ===============================
+" ++++   Extensions   ++++
+" ================================
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+
+let mapleader=" "
+set easymotion
+
+" extension - normal模式自动切换英文输入法
+set keep-english-in-normal-and-restore-in-insert
+
+" ================================
+" ++++   Basic settings   ++++
+" ================================
+
+" 使用无名寄存器，设置ideavim的内外拷贝通用
+set clipboard=unnamed
+" 向下滚屏
+set scrolloff=10
+
+" 设置绝对行号
+set number
+" 设置相对行号
+set relativenumber
+" increasing - 输入搜索模式的过程中逐步匹配并高亮显示匹配的文本
+set incsearch
+" highlight - 将搜索匹配的文本高亮显示
+set hlsearch
+" 取消大小写敏感
+set ignorecase
+" 只能大小写匹配，有大写才启用大小写敏感
+set smartcase
+" no highlight - 清除搜索的高亮
+nmap <Leader>sc :nohlsearch<CR>
+
+"=================================
+"++++   NERDTree   +++++
+"=================================
+
+nmap <leader>e :action SelectInProjectView<CR>
+nmap <leader>d :NERDTreeFocus<CR>
+
+" ================================
+" ++++   Leader Keymaps   ++++
+" ================================
+
+" 复制0寄存器的文本
+nmap <Leader>p "0p
+
+" ================================
+" ++++   No Leader Keymaps   ++++
+" ================================
+
+nmap ge <action>(GotoNextError)
+nmap <leader>rn <action>(RenameElement)
+
+" bookmark - 书签
+nmap mm <action>(ToggleBookmark)
+nmap ma mA
+nmap 'a 'A
+
+" 标签页移动
+nmap L <action>(NextTab)
+nmap H <action>(PreviousTab)
+
+" jk 映射 ESC
+imap jk <ESC>
